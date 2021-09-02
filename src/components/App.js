@@ -1,7 +1,9 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Sidebar from './Sidebar'
 import Homepage from './Homepage'
+import Articles from './Articles'
+import Article from './Article'
 
 class App extends React.Component{
     constructor(props){
@@ -23,7 +25,12 @@ class App extends React.Component{
                     <Route path='/' exact>
                         <Homepage/>
                     </Route>
-                    
+                    <Route path='/articles' exact>
+                        <Articles/>
+                    </Route>
+                    <Route path='/articles/:slug'>
+                        <Article />
+                    </Route>
                 </div>
                 
             </main>
